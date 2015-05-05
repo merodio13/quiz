@@ -1,0 +1,11 @@
+sequelize.sync().sucess(function() {
+Quiz.count().sucess(function (count){
+if ( count === 0) {
+Quiz.create({pregunta:'Capital de Italia',
+             respuesta:'Roma'
+            })
+.sucess(function(){console.log('Base de datos inicializada')});
+};
+});
+});
+
