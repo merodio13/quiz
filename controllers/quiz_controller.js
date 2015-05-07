@@ -19,7 +19,7 @@ models.Quiz.findAll().then(
 function(quizes){
 res.render('quizes/index' , {quizes: quizes});
 }
-).catch(function(error){ next(error);});
+).catch(function(error){ next(error);})
 };
 
 // GET /quizes/:id
@@ -36,6 +36,6 @@ var resultado = 'Incorrecto';
 if (req.query.respuesta === req.quiz.respuesta){
 resultado = 'Correcto';
 }
-{res.render('quizes/answer' , {quiz: req.quiz, respuesta: resultado});
+res.render('quizes/answer' , {quiz: req.quiz, respuesta: resultado});
 
 };
