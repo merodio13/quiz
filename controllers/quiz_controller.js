@@ -41,3 +41,24 @@ exports.index = function (req, res) {
         res.render('quizes/index.ejs', {quizes: quizes});
      }).catch(function(error){next(error);})
 };
+
+// GET /quizes/new
+
+exports.new = function (req, res) {
+     var quiz = models.Quiz.buil(
+{pregunta:"Pregunta" , respuesta :"Respuesta"}
+);
+res.render('quizes/new', {quiz: quiz});
+ };
+
+
+// POST /quizes/create
+
+exports.create = function (req, res) {
+     var quiz = models.Quiz.buil( req.body.quiz);
+quiz.save({fields: ["pregunta" , "respuesta"]}).then(function(){
+res.redirect('/quizes');
+})
+ };
+
+
