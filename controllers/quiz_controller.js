@@ -47,6 +47,13 @@ exports.show = function (req , res){
 res.render('quizes/show' , {quiz : req.quiz ,errors: []});
 };
 
+//DELETE /quizes/:id
+exports.destroy = function (req, res) {
+    req.quiz.destroy().then(function(){
+        res.redirect('/quizes');
+     }).catch(function(error){next(error)});
+};
+
 //GET /quizes/:id/edit
 exports.edit = function (req , res){
 var quiz = req.quiz;
