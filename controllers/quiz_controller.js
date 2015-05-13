@@ -53,6 +53,32 @@ var quiz = models.Quiz.build( // crea objeto quiz
 res.render('quizes/new' , {quiz: quiz , errors:[]});
 };
 
+//GET quizes/:id/edit
+exports.edit = fuction(req,res){
+var quiz = req.quiz;
+res.render('quizes/edit' , {quiz: quiz , errors:[]});
+
+};
+// PUT quizes/:id
+exports.update = function(req , res){
+var quiz.pregunta = req.body.quiz.pregunta;
+var quiz.respuesta = req.body.quiz.respuesta;
+
+req.quiz
+.validate()
+.then(
+function(err){
+if (err){
+res.render('quizes/edit' , {quiz:req.quiz, errors: err.errors});
+}else{
+
+req.quiz
+.save({fields: ["pregunta", "respuesta"]})
+.then(function(){res.redirect('/quizes');});
+}// redireccion HTTP (URL relativo) lista de preguntas
+}
+);
+};
 
 //POST /quizes/create
 exports.create = function(req , res){
@@ -69,7 +95,7 @@ res.render('quizes/new' , {quiz:quiz, errors: err.errors});
 quiz
 .save({fields: ["pregunta", "respuesta"]})
 .then(function(){
-res.redirect('/quizes')})
+res.redirect('/quizes');});
 }// redireccion HTTP (URL relativo) lista de preguntas
 }
 );
