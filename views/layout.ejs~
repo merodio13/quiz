@@ -20,13 +20,13 @@
 <% if (!session.user){ %>
 <span class="right"><a href="/login"> Login </a></span>
 
-<%}else { %>
+<%} else { %>
 <span class="right"> <%= session.user.username %> <a href="/logout"> Logout </a></span>
 <% } %>
 
 
-			<h2>Quiz<span>: el juego de las preguntas</span></h2>
-		</header>
+		<h2>Quiz<span>: el juego de las preguntas<span></h2>
+	</header>
 
 		<nav class="main" id="n1" role="navigation">
 			<span><a href="/"> Inicio </a></span>
