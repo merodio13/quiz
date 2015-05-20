@@ -76,7 +76,7 @@ res.render('quizes/new', {quiz: quiz , errors: []});
 
 exports.create = function (req, res) {
 req.body.quiz.UserId = req.session.user.id;
-     var quiz = models.Quiz.build (req.body.quiz);
+var quiz = models.Quiz.build (req.body.quiz);
 
 quiz
 .validate()
@@ -90,7 +90,7 @@ quiz
 .then( function(){res.redirect('/quizes')})
 }
 }
- }).catch(function(error){next(error)});
+ ).catch(function(error){next(error)});
 };
 
 
