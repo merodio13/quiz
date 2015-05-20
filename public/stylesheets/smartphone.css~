@@ -16,5 +16,3 @@ body{
 footer, input{
 	font-size: large;
 }
-
-.quiz_img { float: none; }
