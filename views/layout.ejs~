@@ -30,7 +30,18 @@
 
 		<nav class="main" id="n1" role="navigation">
 			<span><a href="/"> Inicio </a></span>
-			<span><a href="/quizes"> Preguntas </a></span>
+		 
+     	<span><a href="/quizes"> Preguntas </a></span>
+                        <span><a href="http://bel.neocities.org/"> Autor1 </a></span>
+                        <span><a href="http://misitioweb.neocities.org/"> Autor2 </a></span>
+
+ <span><p>Video Favorito:</p>
+    <iframe id="420"   height="315" src="https://www.youtube.com/embed/HgjQGGZiy-k" frameborder="0" allowfullscreen></iframe></span>
+
+
+<%if(session.user){%>
+     <span><a href="/user/<%=session.user.id%>/quizes">Mis Preguntas</a></span>
+   <%}%>
 		</nav>
 
 		<section class="main" id="s1">

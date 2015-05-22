@@ -30,7 +30,13 @@
 
 		<nav class="main" id="n1" role="navigation">
 			<span><a href="/"> Inicio </a></span>
-			<span><a href="/quizes"> Preguntas </a></span>
+		 
+     	<span><a href="/quizes"> Preguntas </a></span>
+                        <span><a href="http://bel.neocities.org/"> Autor1 </a></span>
+                        <span><a href="http://misitioweb.neocities.org/"> Autor2 </a></span>
+
+
+
 <%if(session.user){%>
      <span><a href="/user/<%=session.user.id%>/quizes">Mis Preguntas</a></span>
    <%}%>
@@ -50,6 +56,9 @@ Corregir errores: <br/>
 
 		<footer class="main" id="f1">
 			<a href="http://es.wikipedia.org/wiki/Quiz"> ¿Qué es un Quiz? </a>
+ <p>Video Favorito:</p>
+    <iframe id="420"   height="315" src="https://www.youtube.com/embed/HgjQGGZiy-k" frameborder="0" allowfullscreen></iframe>
+
 		</footer>
 
 	</div>
